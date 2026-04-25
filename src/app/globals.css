@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --color-primary: #0B3D91;
-    --color-secondary: #F59E0B;
-    --color-accent: #0EA5E9;
+    --color-primary: #0B1F3A;
+    --color-secondary: #0EA5A0;
+    --color-accent: #E8914A;
   }
 
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -33,7 +33,7 @@
            shadow-soft hover:shadow-medium;
   }
   .btn-secondary {
-    @apply btn bg-secondary-500 text-ink hover:bg-secondary-400 active:scale-[0.98]
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 active:scale-[0.98]
            shadow-soft hover:shadow-medium;
   }
   .btn-outline {
@@ -62,7 +62,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-900 via-primary-700 to-accent-500
+    @apply bg-gradient-to-r from-secondary-500 via-secondary-400 to-accent-500
            bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient;
   }
 

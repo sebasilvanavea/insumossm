@@ -17,11 +17,11 @@ export default function NosotrosPage() {
           <FadeIn>
             <span className="badge bg-white/10 border border-white/20 mb-4">Quiénes somos</span>
             <h1 className="text-display-sm lg:text-display-lg font-extrabold tracking-tight">
-              Una historia de servicio y compromiso industrial
+              Más de 12 años sirviendo al sector salud en Chile
             </h1>
             <p className="mt-6 text-lg text-white/80">
-              InsumosSM nace para acercar a las empresas chilenas un proveedor que entienda
-              de verdad la operación: tiempos, costos, calidad y seguridad.
+              InsumosSM nace para acercar a clínicas y centros de salud un distribuidor que
+              entienda el rubro: stock confiable, certificaciones vigentes y respuesta el mismo día.
             </p>
           </FadeIn>
         </div>
@@ -30,9 +30,9 @@ export default function NosotrosPage() {
       <section className="py-20 lg:py-28">
         <div className="container-page grid md:grid-cols-3 gap-8">
           {[
-            { Icon: Target, title: 'Misión', text: 'Entregar suministros confiables y oportunos que potencien la productividad de cada cliente.' },
-            { Icon: Eye, title: 'Visión', text: 'Ser el partner de insumos referente en Chile por excelencia operacional y trato humano.' },
-            { Icon: Heart, title: 'Valores', text: 'Honestidad, agilidad, compromiso técnico y respeto por las personas y el medio ambiente.' },
+            { Icon: Target, title: 'Misión', text: 'Proveer insumos médicos certificados que contribuyan a la atención de calidad de los pacientes.' },
+            { Icon: Eye, title: 'Visión', text: 'Ser el distribuidor médico referente de Chile por confiabilidad, rapidez y trato humano.' },
+            { Icon: Heart, title: 'Valores', text: 'Compromiso con la salud, honestidad, agilidad y respeto por cada profesional y paciente.' },
           ].map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.1}>
               <div className="card p-8 h-full">

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Search } from 'lucide-react';
-import { products, CATEGORIES } from '@/data/products';
+import { products, CATEGORIES, getCategoryById } from '@/data/products';
 import { FadeIn } from '@/components/animations/fade-in';
 
 export default function ProductosPage() {
@@ -17,7 +17,8 @@ export default function ProductosPage() {
       const matchCat = cat === 'all' || p.category === cat;
       const matchQ = q.trim() === '' ||
         p.name.toLowerCase().includes(q.toLowerCase()) ||
-        p.shortDesc.toLowerCase().includes(q.toLowerCase());
+        p.shortDesc.toLowerCase().includes(q.toLowerCase()) ||
+        p.features.some((feature) => feature.toLowerCase().includes(q.toLowerCase()));
       return matchCat && matchQ;
     });
   }, [cat, q]);
@@ -93,11 +94,17 @@ export default function ProductosPage() {
                     className="card overflow-hidden group"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden bg-surface-muted">
-                      <Image
-                        src={p.image} alt={p.name} fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                      {p.image ? (
+                        <Image
+                          src={p.image} alt={p.name} fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_top,#53d3c73d,transparent_55%),linear-gradient(135deg,#0B1F3A,#123B68)] text-6xl">
+                          <span aria-hidden>{p.emoji ?? '📦'}</span>
+                        </div>
+                      )}
                       {p.badge && (
                         <span className="absolute top-3 left-3 badge bg-secondary-500 text-ink shadow-soft">
                           {p.badge}
@@ -105,9 +112,21 @@ export default function ProductosPage() {
                       )}
                     </div>
                     <div className="p-6">
-                      <p className="text-xs uppercase tracking-wider text-accent-600 font-semibold">{p.category}</p>
+                      <p className="text-xs uppercase tracking-wider text-accent-600 font-semibold">
+                        {getCategoryById(p.category)?.label ?? p.category}
+                      </p>
                       <h3 className="mt-1 text-lg font-bold text-ink">{p.name}</h3>
                       <p className="mt-2 text-sm text-ink-muted">{p.shortDesc}</p>
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {p.features.map((feature) => (
+                          <span
+                            key={feature}
+                            className="badge bg-surface-muted text-ink-soft border border-ink/5"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
                       <Link
                         href={`/cotizar?producto=${encodeURIComponent(p.name)}`}
                         className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-900 hover:text-accent-600 transition-colors"

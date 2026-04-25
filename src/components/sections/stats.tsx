@@ -4,10 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const STATS = [
-  { value: 500, suffix: '+', label: 'Empresas atendidas' },
-  { value: 1000, suffix: '+', label: 'Productos en catálogo' },
+  { value: 250, suffix: '+', label: 'SKUs disponibles' },
+  { value: 12, suffix: '+', label: 'Años de experiencia' },
   { value: 24, suffix: ' h', label: 'Despacho promedio' },
-  { value: 98, suffix: '%', label: 'Clientes satisfechos' },
 ];
 
 function Counter({ value, suffix }: { value: number; suffix?: string }) {
@@ -38,7 +37,7 @@ export function Stats() {
     <section className="py-16 lg:py-20 bg-primary-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden />
       <div className="container-page relative">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
           {STATS.map((s, i) => (
             <motion.div
               key={s.label}

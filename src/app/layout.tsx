@@ -9,7 +9,6 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800'],
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.insumossm.cl';
@@ -17,38 +16,38 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.insumossm.cl';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Insumos SM — Suministros industriales y de seguridad en Chile',
+    default: 'InsumosSM — Insumos médicos de alta calidad para profesionales',
     template: '%s | Insumos SM',
   },
   description:
-    'Insumos industriales, de aseo, seguridad y EPP para empresas en Chile. Cotización en línea en 60 segundos. Despacho rápido. Atención especializada.',
+    'Distribuidor de insumos médicos certificados para clínicas, hospitales y centros de salud en Chile. Catálogo +250 SKUs, despacho 24–48 h, cotización en minutos.',
   keywords: [
-    'insumos industriales', 'EPP', 'seguridad industrial', 'aseo industrial',
-    'suministros Chile', 'cotización insumos', 'distribuidora industrial',
+    'insumos médicos', 'apósitos', 'jeringas', 'equipos diagnóstico',
+    'ISP', 'distribuidora médica Chile', 'cotización insumos clínica',
   ],
   authors: [{ name: 'Insumos SM' }],
   openGraph: {
     type: 'website',
     locale: 'es_CL',
     url: SITE_URL,
-    title: 'Insumos SM — Suministros industriales en Chile',
-    description: 'Cotiza en línea en 60 segundos. Despacho rápido a todo Chile.',
+    title: 'InsumosSM — Insumos médicos de alta calidad para profesionales',
+    description: 'Distribuidor de insumos médicos certificados para clínicas, hospitales y centros de salud en Chile.',
     siteName: 'Insumos SM',
   },
-  twitter: { card: 'summary_large_image', title: 'Insumos SM', description: 'Suministros industriales' },
+  twitter: { card: 'summary_large_image', title: 'InsumosSM', description: 'Insumos médicos certificados en Chile' },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large' } },
   icons: { icon: '/favicon.ico' },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0B3D91',
+  themeColor: '#0B1F3A',
   width: 'device-width',
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-CL" className={inter.variable}>
+    <html lang="es-CL" className={`${inter.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

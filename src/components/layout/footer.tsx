@@ -14,19 +14,19 @@ export function Footer() {
               <span className="font-extrabold text-lg">InsumosSM</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Suministros industriales, EPP, aseo y seguridad para empresas en Chile.
-              Cotización rápida, despacho confiable.
+              Distribuidor de insumos médicos de alta calidad para profesionales y
+              centros de salud en todo Chile.
             </p>
           </div>
 
           <div>
             <h4 className="font-bold mb-4 text-white">Productos</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><Link href="/productos?cat=aseo" className="hover:text-secondary-400 transition-colors">Aseo industrial</Link></li>
-              <li><Link href="/productos?cat=seguridad" className="hover:text-secondary-400 transition-colors">Seguridad</Link></li>
-              <li><Link href="/productos?cat=epp" className="hover:text-secondary-400 transition-colors">EPP</Link></li>
-              <li><Link href="/productos?cat=industrial" className="hover:text-secondary-400 transition-colors">Industrial</Link></li>
-              <li><Link href="/productos?cat=oficina" className="hover:text-secondary-400 transition-colors">Oficina</Link></li>
+              <li><Link href="/productos?cat=apostitos" className="hover:text-secondary-400 transition-colors">Apósitos y Gasas</Link></li>
+              <li><Link href="/productos?cat=jeringas" className="hover:text-secondary-400 transition-colors">Jeringas y Agujas</Link></li>
+              <li><Link href="/productos?cat=diagnostico" className="hover:text-secondary-400 transition-colors">Equipos Diagnóstico</Link></li>
+              <li><Link href="/productos?cat=curacion" className="hover:text-secondary-400 transition-colors">Material de Curación</Link></li>
+              <li><Link href="/productos?cat=cirugia" className="hover:text-secondary-400 transition-colors">Insumos Quirúrgicos</Link></li>
             </ul>
           </div>
 
@@ -45,9 +45,9 @@ export function Footer() {
             <h4 className="font-bold mb-4 text-white">Contacto</h4>
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 text-secondary-400" /> +56 9 1234 5678</li>
-              <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 text-secondary-400" /> contacto@insumossm.cl</li>
+              <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 text-secondary-400" /> ventas@insumossm.cl</li>
               <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 text-secondary-400" /> Santiago, Chile</li>
-              <li className="flex items-start gap-2"><Clock className="w-4 h-4 mt-0.5 text-secondary-400" /> Lun a Vie · 9:00 – 18:00</li>
+              <li className="flex items-start gap-2"><Clock className="w-4 h-4 mt-0.5 text-secondary-400" /> Lun a Vie · 8:30 – 18:00</li>
             </ul>
           </div>
         </div>
